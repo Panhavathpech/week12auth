@@ -90,5 +90,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="laravelweek9" />
+    <orderEntry type="module" module-name="agencytheme" />
+    <orderEntry type="module" module-name="agencybootstrap" />
   </component>
 </module>

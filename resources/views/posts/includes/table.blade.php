@@ -3,26 +3,35 @@
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Category ID</th>
                 <th>Category Name</th>
-                <th>Created Date</th>
-                <th>Updated Date</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Creator Name</th>
                 <th>
-                    <a href="{{ route('category.create') }}">+ New</a>
+                    <a href="{{ route('post.create') }}">+ New</a>
                 </th>
             </tr>
         </thead>
         <tbody>
-            @foreach($categories as $category)
-                <tr id="tr{{ $category->id }}">
+            @foreach($posts as $post)
+                <tr>
                     <td>{{ $loop->index + 1 }}</td>
-                    <td>{{ $category->id }}</td>
-                    <td>{{ $category->name }}</td>
-                    <td>{{ $category->created_at }}</td>
-                    <td>{{ $category->updated_at }}</td>
                     <td>
-                        <a href="{{ route('category.edit', $category->id) }}">Edit</a>
-                        <a class="action-category-deletion" href="javascript:void(0)" data-id="{{ $category->id }}" data-url="{{ route('category.deleteAjax', $category->id) }}">Delete</a>
+                        {{ $post->category->name }}
+                    </td>
+                    <td>{{ $post->title }}</td>
+                    <td>{{ $post->author }}</td>
+                    <td>{{ $post->creator->name  }}</td>
+                    <td>
+                        <a href="{{ route('post.show', $post->id) }}">Show</a> |
+
+                        @can('editPost', $post)
+                        <a href="{{ route('post.edit', $post->id) }}">Edit</a> |
+                        @endcan
+
+                        @if(empty($post->category))
+                            <a href="#">Reassign Category</a>
+                            @endif
                     </td>
                 </tr>
                 @endforeach
@@ -32,7 +41,7 @@
 </div>
 <div class="pagination">
 
-    {{ $categories->links() }}
+    {{ $posts->links() }}
 
 </div>
 

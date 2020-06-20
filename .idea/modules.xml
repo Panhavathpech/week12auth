@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../agencybootstrap/.idea/agencybootstrap.iml" filepath="$PROJECT_DIR$/../agencybootstrap/.idea/agencybootstrap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../agencytheme/.idea/agencytheme.iml" filepath="$PROJECT_DIR$/../agencytheme/.idea/agencytheme.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/companylaravel.iml" filepath="$PROJECT_DIR$/.idea/companylaravel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../laravelweek9/.idea/laravelweek9.iml" filepath="$PROJECT_DIR$/../laravelweek9/.idea/laravelweek9.iml" />
     </modules>
   </component>
 </project>
